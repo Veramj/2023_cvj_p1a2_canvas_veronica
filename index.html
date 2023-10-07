@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas en HTML</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <select id="seleccionarContenido" onchange="mostrarContenido()">
+                <option value="contenido1">Qué es Canvas en HTML</option>
+                <option value="contenido2">Cómo llamar al canvas desde JavaScript</option>
+                <option value="contenido3">Ejemplos seleccionados de la red</option>
+                <option value="contenido4">Pintar una X con dos líneas dentro del canvas</option>
+            </select>
+        </nav>
+        <div id="contenido1" class="contenido">
+            <p>El elemento canvas de HTML5 se utiliza para dibujar gráficos y elementos gráficos en una página web mediante JavaScript. Permite crear gráficos interactivos, animaciones y juegos en el navegador.</p>
+            <img src="canvas_html.png" alt="Ejemplo de Canvas en HTML">
+        </div>
+
+        <div id="contenido2" class="contenido">
+            <p>El código busca un elemento "canvas" en la página HTML con el ID "miCanvas"
+               y lo almacena en la variable canvas. Luego, obtiene 
+               representación en 2D del canvas y lo almacena en la variable ctx. 
+               Esto prepara el canvas para ser utilizado con JavaScript y realizar
+               dibujos y gráficos en él mismo.</p>
+            <pre>
+                <code>
+                    var canvas = document.getElementById("miCanvas");
+                    var ctx = canvas.getContext("2d");
+                </code>
+            </pre>
+        </div>
+
+        <div id="contenido3" class="contenido">
+            <p>1. <a href="ejemplo1.html">Ejemplo 1</a></p>
+            <p>2. <a href="ejemplo2.html">Elemplo 2</a></p>
+        </div>
+
+        <div id="contenido4" class="contenido">
+            <p>
+            Este código HTML y JavaScript crea un elemento div con el ID "contenido4" que contiene un lienzo (canvas) de 200x200 píxeles. Luego, utiliza JavaScript para dibujar dos líneas en el lienzo:
+
+            La primera línea se dibuja desde el punto (0, 0) hasta el punto (ancho del lienzo, alto del lienzo) y se le da un color azul con un grosor de 3 píxeles.
+            La segunda línea se dibuja desde el punto (ancho del lienzo, 0) hasta el punto (0, alto del lienzo) y se le da un color rojo con un grosor de 3 píxeles.
+            Ambas líneas se dibujan utilizando el contexto 2D del lienzo (ctx). El resultado es un lienzo con una cruz azul y roja en su interior.
+            
+            Esencialmente, este código ilustra cómo se pueden utilizar las capacidades de dibujo del elemento canvas en HTML utilizando JavaScript para crear elementos gráficos simples.
+            </p>
+            <canvas id="miCanvas" width="200" height="200"></canvas>
+            <script>
+                var canvas = document.getElementById("miCanvas");
+                var ctx = canvas.getContext("2d");
+                ctx.beginPath();
+                ctx.moveTo(0, 0);
+                ctx.lineTo(canvas.width, canvas.height);
+                ctx.strokeStyle = "blue";
+                ctx.lineWidth = 3;
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.moveTo(canvas.width, 0);
+                ctx.lineTo(0, canvas.height);
+                ctx.strokeStyle = "red";
+                ctx.lineWidth = 3;
+                ctx.stroke();
+            </script>
+        </div>
+    </div>
+
+    <script>
+        function mostrarContenido() {
+            var seleccion = document.getElementById("seleccionarContenido").value;
+            var contenidos = document.querySelectorAll(".contenido");
+            contenidos.forEach(function (contenido) {
+                contenido.style.display = "none";
+            });
+            document.getElementById(seleccion).style.display = "block";
+        }
+    </script>
+</body>
+</html>

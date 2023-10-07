@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Canvas 2</title>
+</head>
+<body>
+    <p>
+        Este código HTML y JavaScript crea un canvas de 400x200 píxeles con el ID "miCanvas".
+        Luego, utiliza JavaScript para dibujar un círculo de radio 50 píxeles
+        en el punto (200, 100) en el canvas. El círculo es de color verde, con un borde negro de 2 píxeles de ancho. 
+        El contexto 2D del canvas (ctx) se utiliza para realizar el dibujo. El círculo se rellena con el color verde 
+        especificado y se dibuja un borde negro alrededor de él. 
+        El resultado es un círculo verde con borde negro en la página web.
+    </p>
+    <a href="index.html">Regresar</a>
+    <canvas id="miCanvas" width="400" height="200"></canvas>
+
+    <script>
+        var canvas = document.getElementById("miCanvas");
+        var ctx = canvas.getContext("2d");
+
+        // Dibujar un círculo
+        ctx.beginPath();
+        ctx.arc(200, 100, 50, 0, 2 * Math.PI); // x, y, radio, ángulo inicial, ángulo final
+        ctx.fillStyle = "green"; // Color del círculo
+        ctx.fill();               // Rellenar el círculo
+        ctx.lineWidth = 2;       // Ancho de la línea del borde
+        ctx.strokeStyle = "black"; // Color del borde
+        ctx.stroke();             // Dibujar el borde
+    </script>
+</body>
+</html>

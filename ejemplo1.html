@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Canvas 1</title>
+</head>
+<body>
+    <p>
+        Este código HTML y JavaScript crea un canvas de 400x200 píxeles con el ID "miCanvas". 
+        Luego, utiliza JavaScript para dibujar una línea azul de 5 píxeles de ancho desde 
+        el punto (50, 50) hasta el punto (350, 50) en el canvas. Esto se logra utilizando el contexto 2D del canvas (ctx).
+        La línea se dibuja con el color azul especificado y se muestra en la página web.
+    </p>
+    <a href="index.html">Regresar</a>
+    <canvas id="miCanvas" width="400" height="200"></canvas>
+
+    <script>
+        var canvas = document.getElementById("miCanvas");
+        var ctx = canvas.getContext("2d");
+
+        // Dibujar una línea
+        ctx.beginPath();
+        ctx.moveTo(50, 50);  // Punto de inicio (x, y)
+        ctx.lineTo(350, 50); // Punto de destino (x, y)
+        ctx.strokeStyle = "blue"; // Color de la línea
+        ctx.lineWidth = 5;       // Ancho de la línea
+        ctx.stroke();            // Dibujar la línea
+    </script>
+</body>
+</html>
